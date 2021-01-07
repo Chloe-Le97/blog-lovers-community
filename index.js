@@ -2,10 +2,14 @@ const app = require('./app') // the actual Express application
 const http = require('http')
 const logger = require('./utils/logger')
 
-const server = http.createServer(app)
+// const server = http.createServer(app)
 
-const config = process.env.PORT
+const port = process.env.PORT
 
-server.listen(process.env.PORT, () => {
-  logger.info(`Server running on port ${config}`)
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`)
 })
+
+// server.listen(process.env.PORT || 3000, () => {
+//   logger.info(`Server running on port ${config}`)
+// })
